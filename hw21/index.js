@@ -57,7 +57,10 @@ let users = [
 
 function mapping(array, callback){
     let arr = [];
-    array.forEach((item) => arr.push(callback(item)));
+    for(let item of array){
+        arr.push(callback(item));
+    }
+    // array.forEach((item) => arr.push(callback(item)));
     return arr;
 }
 
@@ -82,7 +85,7 @@ console.log(numbers);
 console.log(mapping(numbers, Mult));
 console.log("");
 
-const array1 = [1, 2, 3, 4];
+const array1 = [1, 2, 4, 3];
 
 // 0 + 1 + 2 + 3 + 4
 // const initialValue = 0;
@@ -92,35 +95,34 @@ const array1 = [1, 2, 3, 4];
 // );
 // console.log(sumWithInitial);
 
-function myReduce(array, callback, initialValue = 0){
-    return callback(array, initialValue);
+function myReduce(array, callback, initialValue){
+    let res;
+    for(let item of array){
+        res = callback(item, initialValue);
+        initialValue = res;
+    }
+    return res;
 }
 
-function sumWithInitial(array, initialValue){
+function sumWithInitial(item, initialValue){
     let sum = 0;
-    for(let item of array){
-        sum = item + initialValue;
-        initialValue = sum;
-    }
+    sum = item + initialValue;
     return sum;
 }
 
-function arrayOfIndexAndValueMaxElement(array, initialValue){
-    let max = array[0];
-    let index = 0;
-    for(let i = 1; i < array.length; i++){
-        if(max < array[i]){
-            max = array[i];
-            index = i;
-        }
+let index = -1;
+function arrayOfIndexAndValueMaxElement(item, initialValue){
+    let max = item;
+    index++;
+    if(max > initialValue[1]){
+        return [index, max];
+    } else{
+        return initialValue;
     }
-    initialValue.max = max;
-    initialValue.index = index;
-    return initialValue;
 }
 
-console.log(myReduce(array1, sumWithInitial));
-console.log(myReduce(array1, arrayOfIndexAndValueMaxElement, {}));
+console.log(myReduce(array1, sumWithInitial, 0));
+console.log(myReduce(array1, arrayOfIndexAndValueMaxElement, [0, array1[0]]));
 console.log("");
 
 // let imm;
