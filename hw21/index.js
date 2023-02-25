@@ -110,20 +110,20 @@ function sumWithInitial(item, initialValue){
     return sum;
 }
 
-let index = -1;
-function arrayOfIndexAndValueMaxElement(item, initialValue){
-    let max = item;
-    index++;
-    if(max > initialValue[1]){
-        return [indexOf(max), max];
-    } else{
-        return initialValue;
-    }
-}
+// let index = -1;
+// function arrayOfIndexAndValueMaxElement(item, initialValue){
+//     let max = item;
+//     index++;
+//     if(max > initialValue[1]){
+//         return [indexOf(max), max];
+//     } else{
+//         return initialValue;
+//     }
+// }
 
 console.log(myReduce(array1, sumWithInitial, 0));
-console.log(myReduce(array1, arrayOfIndexAndValueMaxElement, [0, array1[0]]));
-console.log("");
+// console.log(myReduce(array1, arrayOfIndexAndValueMaxElement, [0, array1[0]]));
+// console.log("");
 
 // let imm;
 // users.pop() // mutable
