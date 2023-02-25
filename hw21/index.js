@@ -115,7 +115,7 @@ function arrayOfIndexAndValueMaxElement(item, initialValue){
     let max = item;
     index++;
     if(max > initialValue[1]){
-        return [index, max];
+        return [indexOf(max), max];
     } else{
         return initialValue;
     }
