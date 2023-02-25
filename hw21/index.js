@@ -157,7 +157,7 @@ console.log("");
 // console.log(users);
 // console.log(imm);
 
-// users.reverse();
+// users.reverse(); // mutable
 // console.log(users);
 // imm = [...arr].reverse(); // immutable
 // console.log(users);
