@@ -8,7 +8,15 @@ function seyHello(name) {
         }
         alert(`Hello guys, ${people.join(', ')}!`)
     }
+
+    // let text = [
+    //     arguments.length > 1 ? 'Hello guys' : 'Hello',
+    //     ...arguments
+    // ];
+	// alert( `${text.join(', ')}!`)
 }
+
 
 seyHello('Petro');
 seyHello('Petro', 'Ivan', 'Olga');
+
