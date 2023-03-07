@@ -38,7 +38,7 @@ console.log(mapping(
 ));
 
 mapping(7, (num)=>{return num * 2});
-mapping(null, (num)=>{return num * 2});
+mapping(null, (item)=>item);
 
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
