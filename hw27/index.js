@@ -5,7 +5,7 @@ function mapping(obj, callback){
             array.push(callback(item))
         }
         return array;
-    } else if (typeof obj === "object"){
+    } else if (typeof obj === "object" && obj !== null){
         let object = {};
         for(let key in obj){
             object[key] = callback(obj[key]);
@@ -38,6 +38,7 @@ console.log(mapping(
 ));
 
 mapping(7, (num)=>{return num * 2});
+mapping(null, (num)=>{return num * 2});
 
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
