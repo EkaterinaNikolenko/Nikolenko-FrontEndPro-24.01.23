@@ -3,12 +3,9 @@ class Person {
         this.name = name;
         this.age = age;
     }
-    get personInfo() {
+    get info() {
         console.log(`Name: ${this.name}, Age: ${this.age}`)
     }
-    // get personInfo() {
-    //     return `Name: ${this.name}, Age: ${this.age}`;
-    // }
 }
 
 class Car{
@@ -22,7 +19,6 @@ class Car{
     owner(Person) {
         if(Person.age >= 18) {
             this.owner = Person;
-            // this.owner.__proto__ = Person.personInfo();
         } else {
             console.log(Person.name + ", you can't drive car! You are under 18!");
             this.owner = "Car has not owner";
@@ -31,7 +27,7 @@ class Car{
 
     info() {
         if(typeof this.owner === "object") {
-            this.owner.personInfo
+            this.owner.info
             console.log(`Car: Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}, Numberplate: ${this.numberplate}`);
         } else {
             console.log(`(has not owner) Car: Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}, Numberplate: ${this.numberplate}`);
@@ -44,9 +40,9 @@ const tom = new Person("Tom", 18);
 const kim = new Person("Kim", 15);
 const ted = new Person("Ted", 37);
 
-tom.personInfo;
-kim.personInfo;
-ted.personInfo;
+tom.info;
+kim.info;
+ted.info;
 console.log("");
 
 const mercedes = new Car("Mercedes-Benz", "C-Class", 2015, "AA 1234 AK");
