@@ -21,7 +21,7 @@ function App() {
       if(data.cod === '404') {
         setState(() => ({
           city: null,
-          error: "Enter the city right"
+          error: "Enter the city correctly"
         }));
       }
       else {
@@ -94,8 +94,6 @@ function App() {
           </StyledContent>
         </Layout>
       </Layout>
-      {/* <Form getWeather={getWeather} />
-      <Weather state={state}/> */}
     </div>
   );
 }
