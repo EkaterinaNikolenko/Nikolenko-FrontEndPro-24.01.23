@@ -1,0 +1,40 @@
+.container-weather {
+    background-color: #d8e9f1;
+    border-radius: 20px;
+    padding: 20px 40px;
+    width: 40vw;
+    margin-top: 30px;
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city {
+    color: #1b3f63;
+    font-size: 30px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-info div {
+    text-align: left;
+}
+
+.desc {
+    text-transform: capitalize;
+}
+
+p {
+    color: #1b3f63;
+    font-size: 20px;
+}
+
+img {
+    height: 90px;
+    width: auto;
+}
