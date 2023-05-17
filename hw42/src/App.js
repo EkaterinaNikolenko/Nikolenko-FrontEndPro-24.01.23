@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import WeatherForm from './Components/WeatherForm';
-import Weather from './Components/Weather';
 import {Layout} from 'antd';
-import {Menu} from 'antd';
-import { Header, Content} from 'antd/es/layout/layout';
-import Sider from 'antd/es/layout/Sider';
-import styled from 'styled-components';
+import WeatherForm from './Components/WeatherComponents/WeatherForm';
+import Weather from './Components/WeatherComponents/Weather';
+import StyledHeader from './Components/StyledComponents/StyledHeader'
+import StyledContent from './Components/StyledComponents/StyledContent'
+import StyledSider from './Components/StyledComponents/StyledSider'
+import StyledMenuWithItems from './Components/StyledComponents/StyledMenuWithItems'
 
 function App() {
   let [state, setState] = useState({});
@@ -44,52 +44,19 @@ function App() {
       }));
     }
   }
-  function getItem(label, key, icon, children, type) {
-    return {
-      key,
-      label,
-    };
-  }
-  const items = [
-    getItem('Home', '1'),
-    getItem('API', '2'),
-    getItem('Maps', '3'),
-    getItem('Option 1', '4'),
-    getItem('Option 2', '4'),
-  ];
-  const StyledHeader = styled(Header)`
-      color: white;
-      font-size: 30px;
-      font-weight: 700;
-      background-color: #7797ac;
-  `
-  const StyledSider = styled(Sider)`
-      color: white;
-      font-size: 20px;
-      height: 100vh;
-  `
-  const StyledMenu = styled(Menu)`
-      color: black;
-      font-size: 20px;
-      background-color: white;
-  `
-  const StyledContent = styled(Content)`
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  `
+
   return (
     <div className="App">
       <Layout>
-        <StyledSider theme="light">left sidebar
-          <StyledMenu items={items}></StyledMenu>
+        <StyledSider theme="light">
+          <StyledMenuWithItems></StyledMenuWithItems>
         </StyledSider>
         <Layout>
           <StyledHeader>Weather Forecast</StyledHeader>
           <StyledContent>
             <div>
-            <WeatherForm getWeather={getWeather} />
-            <Weather state={state}/>
+              <WeatherForm getWeather={getWeather} />
+              <Weather state={state}/>
             </div>
           </StyledContent>
         </Layout>
