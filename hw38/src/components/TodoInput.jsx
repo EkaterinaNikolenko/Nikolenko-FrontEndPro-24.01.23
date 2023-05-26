@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { AddTodoAction } from '../redux/actions/TodoActions';
 
-function TodoInput(props) {
+function TodoInput() {
     const [inputText, setInputText] = useState('');
+    const dispatch = useDispatch();
     const handleEnterPress = (e) => {
-        if(e.keyCode == 13) {
-            props.addList(inputText);
+        if(e.keyCode === 13) {
             setInputText("");
+            dispatch(AddTodoAction(inputText));
         }
     }
   return (
@@ -22,8 +25,8 @@ function TodoInput(props) {
         />
         <button className='add-btn'
         onClick={() => {
-            props.addList(inputText);
             setInputText("");
+            dispatch(AddTodoAction(inputText));
         }}>+</button>
     </div>
   )
