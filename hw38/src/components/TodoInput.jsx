@@ -5,10 +5,13 @@ import { AddTodoAction } from '../redux/actions/TodoActions';
 function TodoInput() {
     const [inputText, setInputText] = useState('');
     const dispatch = useDispatch();
+    const handleClick = () => {
+        setInputText("");
+        dispatch(AddTodoAction(inputText));
+    }
     const handleEnterPress = (e) => {
         if(e.keyCode === 13) {
-            setInputText("");
-            dispatch(AddTodoAction(inputText));
+            handleClick();
         }
     }
   return (
@@ -24,10 +27,7 @@ function TodoInput() {
             onKeyDown={handleEnterPress}
         />
         <button className='add-btn'
-        onClick={() => {
-            setInputText("");
-            dispatch(AddTodoAction(inputText));
-        }}>+</button>
+        onClick={handleClick}>+</button>
     </div>
   )
 }

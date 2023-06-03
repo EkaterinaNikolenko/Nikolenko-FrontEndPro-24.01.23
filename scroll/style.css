@@ -1,0 +1,35 @@
+body {
+    background-color:rgba(71, 184, 255, 0.2);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    /* position: absolute; */
+}
+
+#card-container{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 145px;
+    height: 145px;
+    margin: 10px 10px;
+    border-radius: 20px;
+}
+
+p {
+    text-align: center;
+    margin: 10px 0;
+    color: black;
+    /* bottom:inherit; */
+    /* position: relative; */
+}
+

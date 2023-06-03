@@ -1,7 +1,9 @@
+import { addTodo, removeTodo } from "../Constants";
+
 export const AddTodoAction = (todo) => (dispatch) => {
     if(todo.trim() !== '') {
         dispatch({
-            type: "ADD_TODO",
+            type: addTodo,
             payload: todo
         });
     }
@@ -12,7 +14,7 @@ export const RemoveTodoAction = (todo) => (dispatch, getState) => {
         Todo: {todos}
     } = getState();
     dispatch({
-        type: "REMOVE_TODO",
+        type: removeTodo,
         payload: todos.filter((t) => todo !== t)
     });
 };
